@@ -1,0 +1,33 @@
+pkgbase = cling-dev-git
+	pkgdesc = Interactive C++ interpreter (includes custom clang and llvm for dev).
+	pkgver = 0.7.r19.ge84dc544
+	pkgrel = 1
+	url = https://root.cern.ch/cling
+	arch = i686
+	arch = x86_64
+	license = custom:Cling Release License
+	makedepends = cmake
+	makedepends = libffi
+	makedepends = git
+	makedepends = python
+	makedepends = python2
+	makedepends = jupyter
+	source = llvm::git+http://root.cern.ch/git/llvm.git#branch=cling-patches
+	source = clang::git+http://root.cern.ch/git/clang.git#branch=cling-patches
+	source = cling::git+http://root.cern.ch/git/cling.git#branch=master
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = cling-dev-git
+	depends = libffi
+	provides = cling=0.7.r19.ge84dc544
+	provides = cling-dev=0.7.r19.ge84dc544
+	conflicts = cling
+
+pkgname = cling-jupyter-dev-git
+	depends = cling-dev-git
+	depends = jupyter
+	provides = cling-jupyter=0.7.r19.ge84dc544
+	provides = cling-jupyter-dev=0.7.r19.ge84dc544
+
